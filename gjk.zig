@@ -80,7 +80,7 @@ pub fn gjk(shapeA: Shape, shapeB: Shape) bool {
     s.push(p0);
     d = p0.neg();
 
-    for (0..32) |_| {
+    while (true) {
         const p = shape.minkowskit(shapeA, shapeB, d);
         if (p.dot(d) < 0) return false;
         s.push(p);
